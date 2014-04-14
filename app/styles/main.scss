@@ -1,0 +1,276 @@
+$fa-font-path: "/bower_components/fontawesome/fonts/";
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'fontawesome/scss/font-awesome';
+@import 'sass-bootstrap/lib/bootstrap';
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700);
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #201f25 url('../images/bg.png');
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+.container {
+  @include box-shadow(0px 0px 14px 3px rgba(0, 0, 0, 0.75));
+  padding: 0;
+  background: #fff;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.header {
+  position: relative;
+  height: 700px;
+  padding: 40px 70px;
+  background: #201f25 url('../images/header-dark.jpg');
+
+  .greet {
+    margin: 60px auto 0;
+    width: 600px;
+
+    .abbr {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 300;
+      color: #f9da27;
+    }
+    .small {
+      line-height: 2;
+    }
+  }
+
+  .video-js {
+    display: block;
+    margin: 70px auto 0;
+    @include box-shadow(0px 0px 10px 3px rgba(0, 0, 0, 0.75));
+
+    &.vjs-default-skin .vjs-big-play-button {
+      background: none;
+      position: relative;
+      border: none;
+      box-shadow: none;
+      margin: 0 auto;
+      top: -160px;
+    }
+  }
+}
+
+.logo {
+  display: inline-block;
+  height: 45px;
+  width: 210px;
+  background: transparent url('../images/logo.png') no-repeat;
+}
+
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+.socials {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  right: 80px;
+  li {
+    display: inline-block;
+    list-style: none;
+    padding: 5px 0;
+    width: 30px;
+    background: #5a596b;
+    color: #fff;
+    text-align: center;
+    vertical-align: bottom;
+    &:hover {
+      border-bottom: 4px #f9da27 solid;
+    }
+  }
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.nav-pills > li {
+  > a {
+    background: none;
+    border: 2px solid #5c5c5c;
+    border-radius: 0;
+    text-transform: lowercase;
+    font-size: 12px;
+    padding: 3px 10px;
+    margin: 0 10px;
+    color: #5c5c5c;
+    &:hover {
+      background: #9A9A9A;
+    }
+  }
+
+  &.active a {
+    background: none;
+    border: none;
+    color: #5c5c5c;
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.content {
+  overflow: hidden;
+
+  .row {
+    overflow: hidden;
+    position: relative;
+
+    .col-lg-4 {
+      width: 33.33334%;
+    }
+  }
+
+  .panel {
+    position: relative;
+    height: 100%;
+    padding: 20px 40px;
+    margin-bottom: 0;
+    border: none;
+    border-radius: 0;
+    h3, h4, h5 {
+      color: #98989a;
+    }
+    p {
+      color: #848388;
+    }
+
+    p.hover {
+      display: none;
+      position: absolute;
+      bottom: 0;
+      width: 200px;
+      background: #ededed;
+      padding: 10px;
+      margin: 0;
+      font-size: 10px;
+    }
+
+    &:hover {
+      p {
+        display: block;
+      }
+    }
+  }
+
+  .panel-production {
+    height: 250px;
+    background: #000 url("../images/phones.jpg") no-repeat;
+    p.hover {
+      top: 0;
+      left: 0;
+      bottom: auto;
+    }
+  }
+
+  .panel-map {
+    background: url("../images/map.jpg");
+    height: 250px;
+    padding: 0;
+  }
+
+  .panel-shop {
+    background: url("../images/shop.jpg") 15px;
+    height: 250px;
+    padding: 0;;
+    p.hover {
+      top: 0;
+      bottom: auto;
+      right: 0;
+      left: auto;
+    }
+  }
+
+  .panel-about {
+    background: #302f35 url("../images/brkln.jpg") no-repeat;
+    height: 470px;
+  }
+
+  .panel-player {
+    position: relative;
+    background: #e5e5e5;
+    height: 470px;
+    h5 {
+      margin-bottom: 20px;
+      color: #1e1d22;
+    }
+    .albums {
+      text-align: center;
+
+      .album {
+        display: inline-block;
+        height: 149px;
+        width: 149px;
+        margin: 1px;
+
+        &:hover {
+          border: 3px solid #e5e5e5;
+          background-position: -3px -3px;
+        }
+      }
+
+      .album-1 {
+        background: #e5e5e5 url("../images/album-1.png") no-repeat;
+      }
+      .album-2 {
+        background: #e5e5e5 url("../images/album-2.png") no-repeat;
+      }
+      .album-3 {
+        background: #e5e5e5 url("../images/album-3.png") no-repeat;
+      }
+      .album-4 {
+        background: #e5e5e5 url("../images/album-4.png") no-repeat;
+      }
+    }
+
+    .audiojs {
+      width: 300px;
+      margin: 20px 1px;
+
+      .play-pause {
+        width: 35px;
+      }
+      .scrubber {
+        width: 136px;
+      }
+    }
+  }
+
+  .projects {
+    height: 370px;
+    padding: 30px 0;
+    background: #f7f8f1 url("../images/projects.jpg") no-repeat;
+
+  }
+}
