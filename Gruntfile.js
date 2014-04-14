@@ -188,9 +188,11 @@ module.exports = function (grunt) {
                     optimize: 'none',
                     paths: {
                         'templates': '../../.tmp/scripts/templates',
-                        'jquery': '../../app/bower_components/jquery/jquery',
+                        'jquery': '../../app/bower_components/jquery/dist/jquery',
                         'underscore': '../../app/bower_components/underscore/underscore',
-                        'backbone': '../../app/bower_components/backbone/backbone'
+                        'backbone': '../../app/bower_components/backbone/backbone',
+                        'video': '../../app/bower_components/videojs/dist/video-js/video',
+                        'audio': '../../app/bower_components/audiojs/audiojs/audio'
                     },
                     // TODO: Figure out how to make sourcemaps work with grunt-usemin
                     // https://github.com/yeoman/grunt-usemin/issues/30
@@ -268,7 +270,7 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,txt}',
                         '.htaccess',
-                        'images/{,*/}*.{webp,gif}',
+                        'images/{,*/}*.*',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*'
                     ]
@@ -374,7 +376,7 @@ module.exports = function (grunt) {
         'compass:dist',
         'useminPrepare',
         'requirejs',
-        'imagemin',
+//        'imagemin',
         'htmlmin',
         'concat',
         'cssmin',
