@@ -110,6 +110,7 @@ h3, h4, h5, h6 {
 
 /* Custom page footer */
 .footer {
+  display: none;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
@@ -270,7 +271,7 @@ h3, h4, h5, h6 {
   .projects {
     height: 370px;
     padding: 30px 0;
-    background: #f7f8f1 url("../images/projects.jpg") no-repeat;
-
+    background: #f7f8f1 url("../images/projects.jpg") 0 30px no-repeat;
+    box-sizing: content-box;
   }
 }
