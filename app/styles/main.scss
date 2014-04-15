@@ -259,6 +259,10 @@ h3, h4, h5, h6 {
       width: 300px;
       margin: 20px 1px;
 
+      .play, .loading, .error, .pause {
+        background-image: url("../images/player-graphics.gif");
+      }
+
       .play-pause {
         width: 35px;
       }
@@ -275,3 +279,5 @@ h3, h4, h5, h6 {
     box-sizing: content-box;
   }
 }
+
+

@@ -273,7 +273,9 @@ module.exports = function (grunt) {
                         'images/{,*/}*.*',
                         'styles/fonts/{,*/}*.*',
                         'bower_components/sass-bootstrap/fonts/*.*',
-                        'bower_components/fontawesome/fonts/*.*'
+                        'bower_components/fontawesome/fonts/*.*',
+                        'bower_components/audiojs/audiojs/*.{png,jpg,jpeg,gif,webp}',
+                        'bower_components/videojs/dist/video-js/*.css'
                     ]
                 }]
             }
