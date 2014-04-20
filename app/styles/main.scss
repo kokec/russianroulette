@@ -1,118 +1,224 @@
 $icon-font-path: "/bower_components/bootstrap-sass/vendor/assets/fonts/";
+$fa-font-path: "/bower_components/fontawesome/fonts/";
 
+@import 'fontawesome/scss/font-awesome';
 @import 'bootstrap-sass/vendor/assets/stylesheets/bootstrap';
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
 
 /* Space out content a bit */
 body {
-  padding-top: 20px;
+  padding-top:    20px;
   padding-bottom: 20px;
-  color: #999;
+  color:          #999;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
+  padding-left:  15px;
   padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  padding:       20px 0 40px;
+  position:      relative;
+  border-bottom: 1px solid #333;
+
+  .header-inner {
+    padding-bottom: 20px;
+    border-bottom:  1px solid #333;
+  }
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
+    margin-top:     0;
+    margin-bottom:  0;
+    line-height:    40px;
     padding-bottom: 19px;
+  }
+
+  .logo {
+    display:          inline-block;
+    height:           45px;
+    width:            205px;
+    background-image: url(../images/logo.png);
+  }
+
+  .greet {
+    margin: 60px auto 0;
+    width:  600px;
+
+    .abbr {
+      font-size:      24px;
+      text-transform: uppercase;
+      font-weight:    300;
+      color:          #f9da27;
+    }
+    .small {
+      line-height: 2;
+    }
+  }
+
+  .mejs-container {
+    margin: 40px auto;
+    @include box-shadow(0px 0px 30px 0px rgba(93, 111, 125, 0.69))
+  }
+
+}
+
+.socials {
+  position: absolute;
+  margin:   0;
+  bottom:   0;
+  right:    0;
+  li {
+    display:        inline-block;
+    list-style:     none;
+    padding:        5px 0;
+    width:          30px;
+    background:     #5a596b;
+    color:          #fff;
+    text-align:     center;
+    vertical-align: bottom;
+    &:hover {
+      border-bottom: 4px #f9da27 solid;
+    }
+  }
+}
+
+.nav-pills > li {
+  > a {
+    background:     none;
+    border:         2px solid #5c5c5c;
+    border-radius:  0;
+    text-transform: lowercase;
+    font-size:      12px;
+    padding:        3px 10px;
+    margin:         0 10px;
+    color:          #5c5c5c;
+    &:hover {
+      background: #9A9A9A;
+    }
+  }
+
+  &.active a {
+    background: none;
+    border:     none;
+    color:      #5c5c5c;
+    &:hover {
+      background: none;
+    }
   }
 }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  color:       #777;
+  border-top:  1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
-  margin: 30px 0;
+hr {
+  margin-top: 0;
+  border-top: 1px solid #333;
 }
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
-
-/*Wrapper
-	-------------------*/
 
 .bg-image {
-  width: 100%;
-  height: 100%;
+  width:    100%;
+  height:   100%;
   position: fixed;
   overflow: hidden;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
+  top:      0px;
+  left:     0px;
+  z-index:  -1;
 }
-
-/*Overlay
-	-------------------*/
 
 .bg-image #epic-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  position:   absolute;
+  width:      100%;
+  height:     100%;
   background: transparent url(../images/pattern.png) repeat top left;
-  z-index: 2;
+  z-index:    2;
 }
 
-/*Image
-	-------------------*/
-
 .bg-image img {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
+  position:  absolute;
+  top:       0px;
+  left:      0px;
+  width:     100%;
   max-width: none;
-  display: none;
+  display:   none;
+}
+
+.map {
+  margin-bottom: 20px;
+  height:        400px;
+
+  .overlay {
+    position:   relative;
+    height:     100%;
+    background: transparent url(../images/pattern.png) repeat top left;
+  }
+}
+
+.tiles {
+  margin: 20px 0 20px -6px;
+  padding-bottom: 20px;
+
+  .row {
+    margin-top:    20px;
+    margin-bottom: 20px;
+  }
+
+  .col {
+    padding: 0;
+    width:   376px !important;
+    margin:  0 0 6px 6px;
+  }
+
+  .col-small {
+    height: 247px !important;
+  }
+  .col-large {
+    height: 500px !important;
+  }
+
+  .tile {
+    height:     100%;
+    background: #fff;
+    overflow:   hidden;
+
+    img {
+      width:  100%;
+      height: 100%;
+
+      @include transition(all 0.3s ease);
+    }
+
+    .overlay {
+      position:   absolute;
+      width:      100%;
+      height:     100%;
+      top:        0;
+      background: #000;
+      opacity:    0;
+
+      @include transition(opacity 0.3s ease);
+    }
+    &:hover {
+      cursor: pointer;
+      .overlay {
+        opacity: 0.5;
+      }
+
+      img {
+        -webkit-transform: scale(1.3);
+        -moz-transform:    scale(1.3);
+        -ms-transform:     scale(1.3);
+        -o-transform:      scale(1.3);
+        transform:         scale(1.3);
+      }
+    }
+  }
 }

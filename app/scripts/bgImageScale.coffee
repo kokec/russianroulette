@@ -5,7 +5,7 @@ $.fn.bgImageScale = (options) ->
     opacity: 0.4
     usePattern: true
     background: '#ff5500'
-    delay: 100
+    delay: 500
     minWidth: 600
     overlayClass: 'bg-image-overlay'
     callback: ()->
