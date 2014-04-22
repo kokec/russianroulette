@@ -22,6 +22,7 @@ body {
 /* Custom page header */
 .header {
   padding:       20px 0 40px;
+  margin-bottom: 20px;
   position:      relative;
   border-bottom: 1px solid #333;
 
@@ -46,7 +47,7 @@ body {
   }
 
   .greet {
-    margin: 60px auto 0;
+    margin: 40px auto 0;
     width:  600px;
 
     .abbr {
@@ -163,7 +164,7 @@ hr {
 }
 
 .tiles {
-  margin: 20px 0 20px -6px;
+  margin:         20px 0 20px -6px;
   padding-bottom: 20px;
 
   .row {
@@ -206,10 +207,32 @@ hr {
 
       @include transition(opacity 0.3s ease);
     }
+    .link {
+      position:       relative;
+      display:        block;
+      visibility:     hidden;
+      padding-top:    70px;
+      background:     transparent url("../images/logo-small.png") center 50% no-repeat;
+      color:          #fff;
+      top:            -60%;
+      width:          100%;
+      text-align:     center;
+      margin-top:     -50px;
+      text-transform: uppercase;
+      opacity:        0;
+
+      @include transition(all 0.2s ease-in);
+    }
+
     &:hover {
       cursor: pointer;
       .overlay {
-        opacity: 0.5;
+        opacity: 0.7;
+      }
+      .link {
+        visibility: visible;
+        top:        -55%;
+        opacity:    1;
       }
 
       img {
@@ -221,4 +244,37 @@ hr {
       }
     }
   }
+}
+
+.player {
+  .ttw-music-player {
+    width:  auto;
+    margin: 20px 0;
+  }
+  .track-info {
+    width: auto;
+  }
+  .tracklist {
+    background: transparent url(../vendor/music-player-1.0.1/plugin/images/tracklist-bg.png) repeat 0 0 scroll;
+
+    li {
+      background: transparent url(../vendor/music-player-1.0.1/plugin/images/tracklist-item-bg.png) repeat-x bottom left scroll;
+    }
+
+    .title {
+      width: auto;
+    }
+    .rating, .duration {
+      display: none;
+    }
+  }
+}
+
+
+.row {
+  padding-bottom: 20px;
+}
+
+.row__underlined_yes {
+  border-bottom: 1px solid #333;
 }

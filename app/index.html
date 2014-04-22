@@ -19,6 +19,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="bower_components/mediaelement/build/mediaelementplayer.min.css"/>
+    <link rel="stylesheet" href="vendor/music-player-1.0.1/plugin/css/style.css"/>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <!-- build:js scripts/vendor.js -->
@@ -45,9 +46,9 @@
     <div class="header">
         <div class="header-inner">
             <ul class="nav nav-pills pull-right">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/contacts.html">Contact</a></li>
             </ul>
             <span class="logo"></span>
         </div>
@@ -79,40 +80,51 @@
             <div class="tiles">
                 <div class="col col-large">
                     <div class="tile">
-                        <img src="http://demo.udfrance.com/cartel/html/black/images/project-1.jpg" alt="project 1">
+                        <img src="//farm5.staticflickr.com/4065/4718520977_c5bbc16326_b.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-small">
                     <div class="tile">
-                        <img src="images/brkln.jpg" alt="project 1">
+                        <img src="images/brkln.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-small">
                     <div class="tile">
+                        <img src="http://mixnparty.com/wp-content/uploads/2014/01/dance-download-hd-dj-music-dance-composer-latest-hd.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-large">
                     <div class="tile">
-                        <img src="images/bldngs.jpg" alt="project 1">
+                        <img src="images/bldngs.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-small">
                     <div class="tile">
+                        <img src="http://www.dazzlingwallpaper.com/image/1359012377_dark_world_map.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-small">
                     <div class="tile">
+                        <img src="http://www.michaeljacksoncelebrityclothing.com/%20Varsity-Letterman-Jackets/black-white-closeup-lining.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
                 <div class="col col-small">
                     <div class="tile">
+                        <img src="http://s3.goodfon.ru/image/46704-1920x1080.jpg">
                         <div class="overlay"></div>
+                        <span class="link">contacts</span>
                     </div>
                 </div>
             </div>
@@ -121,11 +133,12 @@
     <hr>
 
     <div class="row">
-        <div class="col-lg-12">
-            <div class="map">
-            </div>
+        <div class="col-lg-6">
+            <div class="player"></div>
         </div>
+        <div class="col-lg-6"></div>
     </div>
+
     <div class="overlay"></div>
     <div class="footer">
         <p>♥ from toni pizzicato</p>
@@ -137,8 +150,11 @@
 
 <!-- build:js scripts/vendor.js -->
 <script type="text/javascript" src="bower_components/jquery/jquery.js"></script>
+<script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
 <script type="text/javascript" src="bower_components/masonry/dist/masonry.pkgd.js"></script>
 <script src="bower_components/mediaelement/build/mediaelement-and-player.js"></script>
+<script src="vendor/music-player-1.0.1/plugin/jquery-jplayer/jquery.jplayer.js"></script>
+<script src="vendor/music-player-1.0.1/plugin/ttw-music-player.js"></script>
 <!-- endbuild -->
 
 <!-- build:js({app,.tmp}) scripts/main.js -->
