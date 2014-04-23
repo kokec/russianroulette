@@ -37,7 +37,6 @@ $(document).ready(()->
   if $('.player').length
     $('.player').ttwMusicPlayer myPlaylist,
       autoPlay: false
-      description: 'some desc'
       jPlayer:
         swfPath: '../plugin/jquery-jplayer'
 )

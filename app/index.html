@@ -17,6 +17,8 @@
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="bower_components/mediaelement/build/mediaelementplayer.min.css"/>
     <link rel="stylesheet" href="vendor/music-player-1.0.1/plugin/css/style.css"/>
@@ -81,6 +83,7 @@
                 <div class="col col-large">
                     <div class="tile">
                         <img src="//farm5.staticflickr.com/4065/4718520977_c5bbc16326_b.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -88,6 +91,7 @@
                 <div class="col col-small">
                     <div class="tile">
                         <img src="images/brkln.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -95,6 +99,7 @@
                 <div class="col col-small">
                     <div class="tile">
                         <img src="http://mixnparty.com/wp-content/uploads/2014/01/dance-download-hd-dj-music-dance-composer-latest-hd.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -102,6 +107,7 @@
                 <div class="col col-large">
                     <div class="tile">
                         <img src="images/bldngs.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -109,6 +115,7 @@
                 <div class="col col-small">
                     <div class="tile">
                         <img src="http://www.dazzlingwallpaper.com/image/1359012377_dark_world_map.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -116,6 +123,7 @@
                 <div class="col col-small">
                     <div class="tile">
                         <img src="http://www.michaeljacksoncelebrityclothing.com/%20Varsity-Letterman-Jackets/black-white-closeup-lining.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -123,6 +131,7 @@
                 <div class="col col-small">
                     <div class="tile">
                         <img src="http://s3.goodfon.ru/image/46704-1920x1080.jpg">
+
                         <div class="overlay"></div>
                         <span class="link">contacts</span>
                     </div>
@@ -134,9 +143,39 @@
 
     <div class="row">
         <div class="col-lg-6">
+            <form class="form-horizontal">
+                <fieldset>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input id="name" name="name" type="text" placeholder="Enter Your Name"
+                                   class="form-control input-md" required="">
+
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input id="email" name="email" type="email" placeholder="example@your.mail"
+                                   class="form-control input-md" required="">
+
+                        </div>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <textarea class="form-control" id="message" name="message" rows="7">Enter Message Here</textarea>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-6">
             <div class="player"></div>
         </div>
-        <div class="col-lg-6"></div>
     </div>
 
     <div class="overlay"></div>
