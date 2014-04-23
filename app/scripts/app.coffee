@@ -1,10 +1,6 @@
 $ = jQuery
 
-_.defer(()->
-  $('.bg-image').bgImageScale(background: '#000', opacity: 0.2) if $('.bg-image')
-)
-
-$(document).ready(()->
+$(document).ready ()->
   $(".fadeIn").each(()->
     src = $(this).data("src")
     if src
@@ -39,7 +35,8 @@ $(document).ready(()->
       autoPlay: false
       jPlayer:
         swfPath: '../plugin/jquery-jplayer'
-)
+
+  $('.bg-image').bgImageScale(background: '#000', opacity: 0.2) if $('.bg-image')
 
 #grid
 #	/ * init * /
@@ -202,5 +199,5 @@ initialize = ()->
     icon: image
   )
 
-if $('.map')
+if $('.map').length
   google.maps.event.addDomListener(window, 'load', initialize)
