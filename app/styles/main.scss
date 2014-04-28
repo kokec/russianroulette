@@ -201,6 +201,14 @@ hr {
       @include transition(all 0.3s ease);
     }
 
+    a {
+      position: absolute;
+      top:      0;
+      height:   100%;
+      width:    100%;
+      text-decoration: none;
+    }
+
     .overlay {
       position:   absolute;
       width:      100%;
@@ -218,7 +226,7 @@ hr {
       padding-top:    70px;
       background:     transparent url("../images/logo-small.png") center 50% no-repeat;
       color:          #fff;
-      top:            -60%;
+      top:            43%;
       width:          100%;
       text-align:     center;
       margin-top:     -50px;
@@ -235,7 +243,7 @@ hr {
       }
       .link {
         visibility: visible;
-        top:        -55%;
+        top:        45%;
         opacity:    1;
       }
 
