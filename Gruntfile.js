@@ -98,14 +98,16 @@ module.exports = function (grunt) {
         // Empties folders to start fresh
         clean: {
             dist: {
-                files: [{
-                    dot: true,
-                    src: [
-                        '.tmp',
-                        '<%= yeoman.dist %>/*',
-                        '!<%= yeoman.dist %>/.git*'
-                    ]
-                }]
+                files: [
+                    {
+                        dot: true,
+                        src: [
+                            '.tmp',
+                            '<%= yeoman.dist %>/*',
+                            '!<%= yeoman.dist %>/.git*'
+                        ]
+                    }
+                ]
             },
             server: '.tmp'
         },
@@ -139,22 +141,26 @@ module.exports = function (grunt) {
         // Compiles CoffeeScript to JavaScript
         coffee: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/scripts',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/scripts',
+                        src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+                        dest: '.tmp/scripts',
+                        ext: '.js'
+                    }
+                ]
             },
             test: {
-                files: [{
-                    expand: true,
-                    cwd: 'test/spec',
-                    src: '{,*/}*.{coffee,litcoffee,coffee.md}',
-                    dest: '.tmp/spec',
-                    ext: '.js'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'test/spec',
+                        src: '{,*/}*.{coffee,litcoffee,coffee.md}',
+                        dest: '.tmp/spec',
+                        ext: '.js'
+                    }
+                ]
             }
         },
 
@@ -193,12 +199,14 @@ module.exports = function (grunt) {
                 browsers: ['last 1 version']
             },
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/styles/',
-                    src: '{,*/}*.css',
-                    dest: '.tmp/styles/'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '.tmp/styles/',
+                        src: '{,*/}*.css',
+                        dest: '.tmp/styles/'
+                    }
+                ]
             }
         },
 
@@ -268,22 +276,26 @@ module.exports = function (grunt) {
         // The following *-min tasks produce minified files in the dist folder
         imagemin: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/images',
+                        src: '{,*/}*.{gif,jpeg,jpg,png}',
+                        dest: '<%= yeoman.dist %>/images'
+                    }
+                ]
             }
         },
         svgmin: {
             dist: {
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.svg',
-                    dest: '<%= yeoman.dist %>/images'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.app %>/images',
+                        src: '{,*/}*.svg',
+                        dest: '<%= yeoman.dist %>/images'
+                    }
+                ]
             }
         },
         htmlmin: {
@@ -298,12 +310,14 @@ module.exports = function (grunt) {
                     removeRedundantAttributes: true,
                     useShortDoctype: true
                 },
-                files: [{
-                    expand: true,
-                    cwd: '<%= yeoman.dist %>',
-                    src: '{,*/}*.html',
-                    dest: '<%= yeoman.dist %>'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: '<%= yeoman.dist %>',
+                        src: '{,*/}*.html',
+                        dest: '<%= yeoman.dist %>'
+                    }
+                ]
             }
         },
 
@@ -336,32 +350,47 @@ module.exports = function (grunt) {
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>',
-                    src: [
-                        '*.{ico,png,txt}',
-                        '.htaccess',
-                        'images/{,*/}*.webp',
-                        '{,*/}*.html',
-                        'styles/fonts/{,*/}*.*',
-                        'bower_components/bootstrap-sass/vendor/assets/fonts/bootstrap/*.*'
-                    ]
-                }]
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>',
+                        dest: '<%= yeoman.dist %>',
+                        src: [
+                            '*.{ico,png,txt}',
+                            '.htaccess',
+                            'images/{,*/}*.{gif,jpeg,jpg,png}',
+                            '{,*/}*.html',
+                            'styles/fonts/{,*/}*.*',
+                            'bower_components/bootstrap-sass/vendor/assets/fonts/bootstrap/*.*',
+                            'bower_components/fontawesome/fonts/*',
+                            'vendor/music-player-1.0.1/plugin/images/*.{jpg,png}'
+                        ]
+                    },
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>',
+                        dest: '<%= yeoman.dist %>',
+                        src: [
+                            '*.{ico,png,txt}'
+                        ]
+                    }
+                ]
             },
             bodge: {
-                files: [{
-                    expand: true,
-                    dot: true,
-                    cwd: '<%= yeoman.app %>',
-                    dest: '.tmp',
-                    src: [
-                        '**/*.js'
-                    ]
-                }]
-            }, 
+                files: [
+                    {
+                        expand: true,
+                        dot: true,
+                        cwd: '<%= yeoman.app %>',
+                        dest: '.tmp',
+                        src: [
+                            '**/*.js'
+                        ]
+                    }
+                ]
+            },
             styles: {
                 expand: true,
                 dot: true,
@@ -445,9 +474,13 @@ module.exports = function (grunt) {
         'clean:dist',
         'copy:bodge',
         'useminPrepare',
-        'concurrent:dist',
+        'coffee',
+        'compass',
+        'copy:styles',
+//        'imagemin',
+        'svgmin',
         'autoprefixer',
-        'requirejs',
+//        'requirejs',
         'concat',
         'cssmin',
         'uglify',
