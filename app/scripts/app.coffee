@@ -14,18 +14,18 @@ $(document).ready ()->
   )
 
   $('video').mediaelementplayer(
-    defaultVideoWidth: 480
+    defaultVideoWidth:  480
     defaultVideoHeight: 270
   )
   myPlaylist = [
     {
-      mp3: 'media/BME/01-Royce Da 5′9″ Ft. Eminem - Welcome 2 Hell (Prod. by Havoc).mp3'
-      title: 'Welcome 2 Hell (Prod. by Havoc)'
+      mp3:    'media/BME/01-Royce Da 5′9″ Ft. Eminem - Welcome 2 Hell (Prod. by Havoc).mp3'
+      title:  'Welcome 2 Hell (Prod. by Havoc)'
       artist: 'Royce Da 5′9″ Ft. Eminem'
     }
     {
-      mp3: 'media/BME/02-Royce Da 5′9″ Ft. Eminem - Fastlane (Prod. by Supa Dups).mp3'
-      title: 'Fastlane (Prod. by Supa Dups)'
+      mp3:    'media/BME/02-Royce Da 5′9″ Ft. Eminem - Fastlane (Prod. by Supa Dups).mp3'
+      title:  'Fastlane (Prod. by Supa Dups)'
       artist: 'Royce Da 5′9″ Ft. Eminem'
     }
   ]
@@ -34,10 +34,36 @@ $(document).ready ()->
     $('.player').ttwMusicPlayer myPlaylist,
       autoPlay: false
       jPlayer:
-        swfPath: '../plugin/jquery-jplayer'
+                swfPath: '../plugin/jquery-jplayer'
 
   $('.bg-image').bgImageScale(background: '#000', opacity: 0.2) if $('.bg-image')
 
+  headerChanger = (()->
+    docElem = document.documentElement
+    header = $('header')
+    didScroll = false
+    changeHeaderOn = 300;
+
+    init = () ->
+      window.addEventListener 'scroll', (e)->
+        if !didScroll
+          didScroll = true;
+          setTimeout scrollPage, 250
+      false
+
+    scrollPage = () ->
+      sy = scrollY()
+      if sy >= changeHeaderOn
+        header.addClass 'header_shrinked_yes'
+      else
+        header.removeClass 'header_shrinked_yes'
+      didScroll = false;
+
+    scrollY = () ->
+      window.pageYOffset || docElem.scrollTop
+
+    init()
+  )()
 #grid
 #	/ * init * /
 cols = 3
@@ -53,17 +79,17 @@ calculateCols()
 
 $tiles.masonry(
   itemSelector: '.col'
-  isResizable: true
-  columnWidth: Math.floor(($tiles.width() / cols))
+  isResizable:  true
+  columnWidth:  Math.floor(($tiles.width() / cols))
 )
 
 $(window).resize(()->
   calculateCols()
   $tiles.masonry(
     itemSelector: '.col'
-    isResizable: false
-    isAnimated: false
-    columnWidth: Math.floor(($tiles.width() / cols))
+    isResizable:  false
+    isAnimated:   false
+    columnWidth:  Math.floor(($tiles.width() / cols))
   )
 )
 
@@ -71,15 +97,15 @@ $(window).resize(()->
 styles = [
   {
     "featureType": "landscape"
-    "stylers": [
+    "stylers":     [
       "saturation": -100
-      "lightness": 65
+      "lightness":  65
       "visibility": "on"
     ]
   }
   {
     "featureType": "poi"
-    "stylers": [
+    "stylers":     [
       {
         "saturation": -100
       }
@@ -93,7 +119,7 @@ styles = [
   }
   {
     "featureType": "road.highway"
-    "stylers": [
+    "stylers":     [
       {
         "saturation": -100
       }
@@ -104,7 +130,7 @@ styles = [
   }
   {
     "featureType": "road.arterial"
-    "stylers": [
+    "stylers":     [
       {
         "saturation": -100
       }
@@ -118,7 +144,7 @@ styles = [
   }
   {
     "featureType": "road.local"
-    "stylers": [
+    "stylers":     [
       {
         "saturation": -100
       }
@@ -132,7 +158,7 @@ styles = [
   }
   {
     "featureType": "transit"
-    "stylers": [
+    "stylers":     [
       {
         "saturation": -100
       }
@@ -143,7 +169,7 @@ styles = [
   }
   {
     "featureType": "administrative.province"
-    "stylers": [
+    "stylers":     [
       {
         "visibility": "off"
       }
@@ -152,7 +178,7 @@ styles = [
   {
     "featureType": "water"
     "elementType": "labels"
-    "stylers": [
+    "stylers":     [
       {
         "visibility": "on"
       }
@@ -167,7 +193,7 @@ styles = [
   {
     "featureType": "water"
     "elementType": "geometry"
-    "stylers": [
+    "stylers":     [
       {
         "hue": "#ffff00"
       }
@@ -184,19 +210,19 @@ styles = [
 initialize = ()->
   lat = new google.maps.LatLng(56.2890245, 43.9118107)
   myOptions =
-    zoom: 15
-    center: lat
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-    styles: styles
+    zoom:             15
+    center:           lat
+    mapTypeId:        google.maps.MapTypeId.ROADMAP
+    styles:           styles
     disableDefaultUI: true
   image = '../images/marker.png'
 
   map = new google.maps.Map($('.map')[0], myOptions)
   new google.maps.Marker(
     position: lat
-    map: map
-    title: "Hello World!"
-    icon: image
+    map:      map
+    title:    "Hello World!"
+    icon:     image
   )
 
 if $('.map').length
