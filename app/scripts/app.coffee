@@ -1,6 +1,6 @@
 $ = jQuery
 
-$(document).ready ()->
+$ ->
   $(".fadeIn").each(()->
     src = $(this).data("src")
     if src
@@ -42,7 +42,7 @@ $(document).ready ()->
     docElem = document.documentElement
     header = $('header')
     didScroll = false
-    changeHeaderOn = 300;
+    changeHeaderOn = 100;
 
     init = () ->
       window.addEventListener 'scroll', (e)->
@@ -62,8 +62,25 @@ $(document).ready ()->
     scrollY = () ->
       window.pageYOffset || docElem.scrollTop
 
-    init()
+#    init()
   )()
+
+  $('#mep_0').waypoint (way)->
+    if way == 'down'
+      $('.header').addClass 'header_shrinked_yes'
+    else
+      $('.header').removeClass 'header_shrinked_yes'
+  , offset: $('.header').height()
+
+  $('#socials').waypoint (way)->
+    if way == 'down'
+      $(this).addClass 'socials_shrinked_yes'
+      $('.header').addClass 'socials_shrinked_yes'
+    else
+      $(this).removeClass 'socials_shrinked_yes'
+      $('.header').removeClass 'socials_shrinked_yes'
+  , offset: $('.header').height()
+
 #grid
 #	/ * init * /
 cols = 3

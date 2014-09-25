@@ -45,11 +45,22 @@
 <header class="header">
     <div class="header__wrapper">
         <div class="header-logo"><span class="header-logo__wrapper"></span></div>
-        <ul class="nav nav-pills">
-            <li class="nav__item active"><a href="/">Home</a></li>
-            <li class="nav__item"><a href="#">About</a></li>
-            <li class="nav__item"><a href="/contacts.html">Contacts</a></li>
-        </ul>
+
+        <div class="nav__wrapper">
+            <ul class="nav nav__socials socials">
+                <li class="nav__item"><a class="link link_hover-style_change"><span class="fa fa-facebook" data-hover="G"></span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change"><span class="fa fa-pinterest" data-hover="G"></span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change"><span class="fa fa-google-plus" data-hover="G"></span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change"><span class="fa fa-vk" data-hover="G"></span></a></li>
+            </ul>
+
+            <ul class="nav nav__site">
+                <li class="nav__item"><a class="link link_hover-style_change" href="/"><span data-hover="Home">Home</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="#"><span data-hover="About">About</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/contacts.html"><span data-hover="Contacts">Contacts</span></a>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
 <div class="container">
@@ -68,7 +79,7 @@
                 remaining essentially unchanged.</p>
         </div>
 
-        <ul class="socials pull-right">
+        <ul id="socials" class="socials pull-right">
             <li><span class="fa fa-facebook"></span></li>
             <li><span class="fa fa-pinterest"></span></li>
             <li><span class="fa fa-google-plus"></span></li>
@@ -206,6 +217,7 @@
 <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
 <script type="text/javascript" src="bower_components/masonry/dist/masonry.pkgd.js"></script>
 <script src="bower_components/mediaelement/build/mediaelement-and-player.js"></script>
+<script src="bower_components/waypoints/waypoints.js"></script>
 <script src="vendor/music-player-1.0.1/plugin/jquery-jplayer/jquery.jplayer.js"></script>
 <script src="vendor/music-player-1.0.1/plugin/ttw-music-player.js"></script>
 <!-- endbuild -->
