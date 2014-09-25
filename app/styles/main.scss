@@ -151,6 +151,23 @@ body {
   transform:         translate3d(0, 0, 0);
 }
 
+.nav__socials .fa {
+    line-height: 1.2em;
+}
+
+.nav__socials .link.link_hover-style_change span.fa-facebook:after {
+    content: $fa-var-facebook;
+}
+.nav__socials .link.link_hover-style_change span.fa-pinterest:after {
+    content: $fa-var-pinterest;
+}
+.nav__socials .link.link_hover-style_change span.fa-google-plus:after {
+    content: $fa-var-google-plus;
+}
+.nav__socials .link.link_hover-style_change span.fa-vk:after {
+    content: $fa-var-vk;
+}
+
 .nav .nav__item .link.link_hover-style_change:hover span,
 .nav .nav__item .link.link_hover-style_change:focus span {
   -webkit-transform: translateY(-100%);
