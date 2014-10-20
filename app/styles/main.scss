@@ -367,8 +367,10 @@ hr {
 }
 
 .tiles {
-    margin:         20px 0 20px -6px;
+    margin:         20px auto;
     padding-bottom: 20px;
+    box-sizing:     border-box;
+    border:         1px solid #ffff00;
 
     .row {
         margin-top:    20px;
@@ -376,9 +378,15 @@ hr {
     }
 
     .col {
-        padding: 0;
-        width:   376px !important;
-        margin:  0 0 6px 6px;
+        padding:       0;
+        width:         33%;
+        margin-bottom: 6px;
+        display:       inline-block;
+        box-sizing:    border-box;
+        border:        1px solid #fff;
+    }
+    .col:nth-child(3n) {
+        margin-right: 0;
     }
 
     .col-small {
@@ -465,6 +473,18 @@ hr {
         //
 
         //            }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .tiles .col {
+        width: 49%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tiles .col {
+        width: 100%;
     }
 }
 

@@ -1,16 +1,20 @@
 {
-    "name":            "russianroulette",
-    "private":         true,
-    "dependencies":    {
-        "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.1.0",
-        "modernizr":      "~2.6.2",
-        "requirejs":      "~2.1.8",
-        "jquery":         "~1.10.2",
-        "underscore":     "~1.6",
-        "mediaelement":   "~2.14.2",
-        "fontawesome":    "~4.0.3",
-        "masonry":        "3.1.5",
-        "waypoints":      "https://github.com/imakewebthings/jquery-waypoints.git#2.0.5"
-    },
-    "devDependencies": {}
+  "name": "russianroulette",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.1.0",
+    "modernizr": "~2.6.2",
+    "requirejs": "~2.1.8",
+    "jquery": "~1.10.2",
+    "underscore": "~1.6",
+    "mediaelement": "~2.14.2",
+    "fontawesome": "~4.0.3",
+    "masonry": "3.1.5",
+    "waypoints": "https://github.com/imakewebthings/jquery-waypoints.git#2.0.5",
+    "backbone": "~1.1.2",
+    "json2": "*",
+    "backbone.view": "https://github.com/backbonex/backbone.view.elements.git",
+    "underscore.string": "~2.3.3"
+  },
+  "devDependencies": {}
 }
