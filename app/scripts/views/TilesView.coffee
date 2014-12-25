@@ -1,5 +1,5 @@
-define ['Backbone', 'masonry', 'BackboneX'], (Backbone, Masonry)->
-    TilesView = Backbone.View.extend
+define ['BackboneX', 'masonry'], (BackboneView, Masonry)->
+    BackboneView.extend
         _selectors: ()->
             column: '.col'
 

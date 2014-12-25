@@ -1,5 +1,5 @@
-define ['Backbone', 'BackboneX'], (Backbone)->
-    FadeableImageView = Backbone.View.extend
+define ['BackboneX'], (BackboneView)->
+    BackboneView.extend
         initialize: ()->
             @._initImage()
 

@@ -1,5 +1,5 @@
-define ['Backbone', 'BackboneX', 'waypoints'], (Backbone)->
-    HeaderView = Backbone.View.extend
+define ['BackboneX', 'waypoints'], (BackboneView)->
+    BackboneView.extend
         _selectors: ()->
             wpHeader: '#wpHeader'
             wpSocials: '#wpSocials'
