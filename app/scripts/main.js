@@ -1,7 +1,7 @@
 require.config({
     paths: {
-        jquery:              '../bower_components/jquery/jquery',
-        waypoints:           '../bower_components/waypoints/waypoints.js'
+        jquery:              '../vendor/jquery/jquery',
+        waypoints:           '../vendor/waypoints/waypoints.js'
     },
     shim:  {
         waypoints:  {

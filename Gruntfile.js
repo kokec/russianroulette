@@ -174,7 +174,7 @@ module.exports = function (grunt) {
                 imagesDir: '<%= yeoman.app %>/images',
                 javascriptsDir: '<%= yeoman.app %>/scripts',
                 fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
+                importPath: '<%= yeoman.app %>/vendor',
                 httpImagesPath: '/images',
                 httpGeneratedImagesPath: '/images/generated',
                 httpFontsPath: '/styles/fonts',
@@ -207,15 +207,6 @@ module.exports = function (grunt) {
                         dest: '.tmp/styles/'
                     }
                 ]
-            }
-        },
-
-        // Automatically inject Bower components into the HTML file
-        'bower-install': {
-            app: {
-                html: '<%= yeoman.app %>/index.html',
-                ignorePath: '<%= yeoman.app %>/',
-                exclude: [ '<%= yeoman.app %>/bower_components/bootstrap-sass/vendor/assets/javascripts/bootstrap.js' ]
             }
         },
 
@@ -362,8 +353,8 @@ module.exports = function (grunt) {
                             'images/{,*/}*.{gif,jpeg,jpg,png}',
                             '{,*/}*.html',
                             'styles/fonts/{,*/}*.*',
-                            'bower_components/bootstrap-sass/vendor/assets/fonts/bootstrap/*.*',
-                            'bower_components/fontawesome/fonts/*',
+                            'vendor/bootstrap-sass/vendor/assets/fonts/bootstrap/*.*',
+                            'vendor/fontawesome/fonts/*',
                             'vendor/music-player-1.0.1/plugin/images/*.{jpg,png}'
                         ]
                     },
@@ -404,7 +395,7 @@ module.exports = function (grunt) {
         // Generates a custom Modernizr build that includes only the tests you
         // reference in your app
         modernizr: {
-            devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
+            devFile: '<%= yeoman.app %>/vendor/modernizr/modernizr.js',
             outputFile: '<%= yeoman.dist %>/scripts/vendor/modernizr.js',
             files: [
                 '<%= yeoman.dist %>/scripts/{,*/}*.js',
@@ -477,10 +468,10 @@ module.exports = function (grunt) {
         'coffee',
         'compass',
         'copy:styles',
-//        'imagemin',
+        'imagemin',
         'svgmin',
         'autoprefixer',
-//        'requirejs',
+        'requirejs',
         'concat',
         'cssmin',
         'uglify',
