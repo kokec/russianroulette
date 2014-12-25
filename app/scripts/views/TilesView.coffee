@@ -1,32 +1,19 @@
-define ['BackboneX', 'masonry'], (BackboneView, Masonry)->
+define ['BackboneX', 'masonry', 'imagesLoaded'], (BackboneView, Masonry, ImagesLoaded)->
     BackboneView.extend
         _selectors: ()->
             column: '.col'
 
-        _events:
-            'resize window': @._onResize
+        _classes: ()->
+            shown: 'shown'
 
         initialize: ()->
-            cols = 3
 
-            @._calculateCols()
+            ImagesLoaded @.$el[0], ()=>
+                new Masonry @.$el[0],
+                    itemSelector: @._selector 'column'
+                    transitionDuration: 0
 
-            new Masonry @.$el[0],
-                itemSelector: @._selector 'column'
-                isResizable: true
-                columnWidth: Math.floor((@.$el.width() / cols))
-
-        _onResize: ()->
-            @._calculateCols()
-            new Masonry @.$el[0],
-                itemSelector: @._selector 'column'
-                isResizable: false
-                isAnimated: false
-                columnWidth: Math.floor((@.$el.width() / cols))
+                @._elem('column').each (i, el)=>
+                    $(el).addClass @_class('shown')
 
 
-        _calculateCols: ()->
-            if @.$el.width() <= 426
-                cols = 2
-            else
-                cols = 3;

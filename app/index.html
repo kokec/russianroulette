@@ -44,7 +44,7 @@
 
 <header class="header">
     <div class="header__wrapper">
-        <div class="header-logo"><span class="header-logo__wrapper"></span></div>
+        <div class="header-logo"><a href="/"><span class="header-logo__wrapper"></span></a></div>
 
         <div class="nav__wrapper">
             <ul class="nav nav__socials socials">
@@ -55,9 +55,11 @@
             </ul>
 
             <ul class="nav nav__site">
-                <li class="nav__item"><a class="link link_hover-style_change" href="/"><span data-hover="Home">Home</span></a></li>
-                <li class="nav__item"><a class="link link_hover-style_change" href="#"><span data-hover="About">About</span></a></li>
-                <li class="nav__item"><a class="link link_hover-style_change" href="/contacts.html"><span data-hover="Contacts">Contacts</span></a>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/about"><span data-hover="About">About</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/soundcloud"><span data-hover="SoundCloud">SoundCloud</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/instrumental"><span data-hover="Instrumental">Instrumental</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/gallery"><span data-hover="Gallery">Gallery</span></a></li>
+                <li class="nav__item"><a class="link link_hover-style_change" href="/contacts"><span data-hover="Contacts">Contacts</span></a>
                 </li>
             </ul>
         </div>
@@ -66,10 +68,10 @@
 <div class="container">
     <div class="welcome">
 
-        <video width="480" height="270" src="vendor/mediaelement/media/echo-hereweare.mp4" type="video/mp4"
+        <video id="wpHeader" width="480" height="270" src="vendor/mediaelement/media/echo-hereweare.mp4" type="video/mp4"
                controls="controls"></video>
 
-        <div id="wpHeader" class="greet text-center">
+        <div class="greet text-center">
             <p class="abbr">Feel Freedom. Love Music. Become better.</p>
 
             <p class="small text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -91,70 +93,41 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="tiles">
-                <div class="col col-large">
-                    <div class="tile">
+                <div class="col">
+                    <a href="#">
                         <img src="//farm5.staticflickr.com/4065/4718520977_c5bbc16326_b.jpg">
-                        <a href="/">
-                            <div class="overlay"></div>
-                            <span class="link">production</span>
-                        </a>
-                    </div>
+                        <span class="link">Home</span>
+                    </a>
                 </div>
-                <div class="col col-small">
-                    <div class="tile">
+                <div class="col">
+                    <a href="#">
                         <img src="images/brkln.jpg">
-                        <a href="/contacts.html">
-
-                            <div class="overlay"></div>
-                            <span class="link">about</span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="col col-small">
-                    <div class="tile fadeIn" data-src="http://mixnparty.com/wp-content/uploads/2014/01/dance-download-hd-dj-music-dance-composer-latest-hd.jpg">
-                        <a href="/contacts.html">
-                            <div class="overlay"></div>
-                            <span class="link">beats</span>
-                        </a>
-                    </div>
+                <div class="col">
+                    <a href="#">
+                        <img src="http://mixnparty.com/wp-content/uploads/2014/01/dance-download-hd-dj-music-dance-composer-latest-hd.jpg">
+                    </a>
                 </div>
-                <div class="col col-large">
-                    <div class="tile fadeIn" data-src="images/bldngs.jpg">
-                        <a href="/contacts.html">
-                            <div class="overlay"></div>
-                            <span class="link">clients</span>
-                        </a>
-                    </div>
+                <div class="col">
+                    <a href="#">
+                        <img src="images/bldngs.jpg">
+                    </a>
                 </div>
-                <div class="col col-small">
-                    <div class="tile">
+                <div class="col">
+                    <a href="#">
                         <img src="http://www.dazzlingwallpaper.com/image/1359012377_dark_world_map.jpg">
-
-                        <a href="/contacts.html">
-                            <div class="overlay"></div>
-                            <span class="link">contacts</span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="col col-small">
-                    <div class="tile">
+                <div class="col">
+                    <a href="#">
                         <img src="http://www.michaeljacksoncelebrityclothing.com/%20Varsity-Letterman-Jackets/black-white-closeup-lining.jpg">
-
-                        <a href="/contacts.html">
-                            <div class="overlay"></div>
-                            <span class="link">clothes</span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
-                <div class="col col-small">
-                    <div class="tile">
+                <div class="col">
+                    <a href="#">
                         <img src="http://s3.goodfon.ru/image/46704-1920x1080.jpg">
-
-                        <a href="/contacts.html">
-                            <div class="overlay"></div>
-                            <span class="link">gallery</span>
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
