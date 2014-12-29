@@ -1,4 +1,5 @@
 require.config
+    baseUrl: '/scripts'
     paths:
         'jquery': '../vendor/jquery/jquery.min'
         'underscore': '../vendor/underscore/underscore'
