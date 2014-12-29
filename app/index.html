@@ -14,17 +14,17 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="../vendor/mediaelement/build/mediaelementplayer.min.css"/>
+    <link rel="stylesheet" href="vendor/music-player-1.0.1/plugin/css/style.css"/>
     <!-- bower:css -->
     <!-- endbower -->
     <!-- endbuild -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic'
           rel='stylesheet' type='text/css'>
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="../vendor/mediaelement/build/mediaelementplayer.min.css"/>
-    <link rel="stylesheet" href="vendor/music-player-1.0.1/plugin/css/style.css"/>
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <!-- build:js scripts/vendor.js -->
+    <!-- build:js(.tmp) scripts/vendor/modernizr.js -->
     <script src="vendor/modernizr/modernizr.js"></script>
     <!-- endbuild -->
 
@@ -181,17 +181,13 @@
 
 </div>
 
-<script data-main="scripts/main" src="vendor/requirejs/require.js"></script>
-
-<!-- build:js scripts/vendor.js -->
-<!--<script src="vendor/mediaelement/build/mediaelement-and-player.js"></script>-->
-<!--<script src="vendor/music-player-1.0.1/plugin/jquery-jplayer/jquery.jplayer.js"></script>-->
-<!--<script src="vendor/music-player-1.0.1/plugin/ttw-music-player.js"></script>-->
+<!-- build:js({public,.tmp}) /scripts/vendor.js -->
+    <script src="/vendor/requirejs/require.js"></script>
 <!-- endbuild -->
 
-<!-- build:js({app,.tmp}) scripts/main.js -->
-<!--<script type="text/javascript" src="scripts/bgImageScale.js"></script>-->
-<!--<script type="text/javascript" src="scripts/app.js"></script>-->
+<!-- build:js({public,.tmp}) /scripts/out.js -->
+    <script src="/scripts/main.js"></script>
 <!-- endbuild -->
+
 </body>
 </html>
