@@ -1,30 +1,34 @@
-define ['jquery',
-        'views/FadeableImageView', 'views/HeaderView', 'views/TilesView',
-        'bgImageScale'
-], ($, FadeableImageView, HeaderView, TilesView)->
-    App =
-        start: ()->
-            @._initBackground()
-            @._initFadeableImages()
-            @._initHeader()
-            @._initTiles()
+define ['jquery', 'views/FadeableImageView', 'views/HeaderView', 'views/TilesView', 'views/MapView', 'bgImageScale'],
+    ($, FadeableImageView, HeaderView, TilesView, MapView)->
+        App =
+            start: ()->
+                @._initBackground()
+                @._initFadeableImages()
+                @._initHeader()
+                @._initTiles()
+                @._initMap()
 
-        _initBackground: ()->
-            $('.bg-image').bgImageScale(background: '#000', opacity: 0.2) if $('.bg-image')
+            _initBackground: ()->
+                $('.bg-image').bgImageScale(background: '#000', opacity: 0.2) if $('.bg-image')
 
-        _initHeader: ()->
-            new HeaderView
-                el: $('.header')
+            _initHeader: ()->
+                new HeaderView
+                    el: $('.header')
 
-        _initTiles: ()->
-            new TilesView
-                el: $('.tiles')
+            _initTiles: ()->
+                if $('.tiles').length
+                    new TilesView
+                        el: $('.tiles')
 
-        _initFadeableImages: ->
-            $(".fadeIn").each ()->
-                new FadeableImageView
-                    el: $(@)
+            _initMap: ()->
+                if $('.map').length
+                    new MapView
+                        el: $('.map')
 
+            _initFadeableImages: ->
+                $(".fadeIn").each ()->
+                    new FadeableImageView
+                        el: $(@)
 
 #            $('video').mediaelementplayer(
 #                defaultVideoWidth: 480

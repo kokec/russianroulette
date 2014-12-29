@@ -15,7 +15,8 @@
     "json2": "*",
     "backbone.view": "https://github.com/backbonex/backbone.view.elements.git",
     "underscore.string": "~2.3.3",
-    "imagesloaded": "~3.1.8"
+    "imagesloaded": "~3.1.8",
+    "requirejs-plugins": "~1.0.3"
   },
   "devDependencies": {}
 }

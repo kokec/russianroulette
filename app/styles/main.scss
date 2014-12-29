@@ -172,7 +172,8 @@ body {
 }
 
 .nav .nav__item .link.link_hover-style_change:hover span,
-.nav .nav__item .link.link_hover-style_change:focus span {
+.nav .nav__item .link.link_hover-style_change:focus span,
+.nav .nav__item .link.link_active_yes span {
     -webkit-transform: translateY(-100%);
     -moz-transform:    translateY(-100%);
     transform:         translateY(-100%);
@@ -205,6 +206,12 @@ body {
         }
         + li + li + li {
             transition-delay: .28s;
+        }
+
+        a,
+        a:hover,
+        a:focus {
+            color: #fff;
         }
     }
 }
@@ -282,9 +289,10 @@ body {
 /* Custom page header */
 .welcome {
     position:      relative;
-    padding:       20px 0 40px;
+    padding:       40px 0;
     margin-bottom: 20px;
     border-bottom: 1px solid #333;
+    text-align:    center;
 
     /* Make the masthead heading the same height as the navigation */
     h3 {
@@ -371,7 +379,6 @@ hr {
     margin:         20px auto;
     padding-bottom: 20px;
     box-sizing:     border-box;
-    border:         1px solid #ffff00;
 
     .row {
         margin-top:    20px;
@@ -515,4 +522,10 @@ h2 {
 .form-control {
     background: #111;
     opacity:    0.6;
+}
+
+.team {
+    padding:     40px 80px;
+    font-size:   18px;
+    line-height: 2em;
 }

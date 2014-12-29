@@ -17,6 +17,7 @@ require.config
         'eventie/eventie': '../vendor/eventie/eventie'
         'doc-ready/doc-ready': '../vendor/doc-ready/doc-ready'
         'imagesLoaded': '../vendor/imagesloaded/imagesloaded'
+        'async':'../vendor/requirejs-plugins/src/async'
 
     shim:
         'underscore':
