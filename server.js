@@ -9,7 +9,6 @@ var expressMongoose = require('express-mongoose');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var favicon = require('serve-favicon');
-var morgan = require('morgan');
 
 var helpers = require('./app/hbs-helpers');
 var routes = require('./app/routes');
@@ -22,14 +21,14 @@ var port = process.env.NODE_PORT || 3000;
 console.log(port);
 
 // connect to Mongo when the app initializes
-mongoose.connect('mongodb://localhost/amateur');
+mongoose.connect('mongodb://localhost/rr');
 
 app.set('port', port);
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(cookieParser());
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 
 // parse application/json
 app.use(bodyParser.json());
@@ -41,11 +40,6 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// create a write stream (in append mode)
-var accessLogStream = fs.createWriteStream(__dirname + '/access.log', {flags: 'a'});
-
-// setup the logger
-app.use(morgan('combined', {stream: accessLogStream}));
 
 var clientDir, viewsDir;
 /**
@@ -85,6 +79,7 @@ if (app.get('env') === 'production') {
     });
 }
 
+
 app.set('view engine', 'hbs');
 app.set('views', __dirname + viewsDir);
 app.set('public', __dirname + clientDir);
@@ -102,7 +97,13 @@ app.use(function (req, res, next) {
 });
 
 //routes list:
-routes.initialize(app);
+//routes.initialize(app);
+
+
+app.get('/:path', function(req, res, next) {
+    console.log(req.app.get('public') + '/' + req.param('path', 'index') + '.html');
+    res.sendfile(path.join(req.app.get('public') + '/' + req.param('path', 'index') + '.html'));
+});
 
 var server = app.listen(port, function () {
 
@@ -111,4 +112,4 @@ var server = app.listen(port, function () {
 
     console.log('Example app listening at http://%s:%s', host, port)
 
-})
+});
